@@ -930,3 +930,20 @@ function generateMockData() {
     console.log(`[${timestamp}] Dados atualizados dos sensores`)
   }, 60000) // A cada minuto
 }
+
+// Fechar modais clicando fora
+window.addEventListener("click", (event) => {
+  const loginModal = document.getElementById("loginModal")
+  const registerModal = document.getElementById("registerModal")
+  const sosModal = document.getElementById("sosModal")
+
+  if (event.target === loginModal) {
+    closeLoginModal()
+  }
+  if (event.target === registerModal) {
+    closeRegisterModal()
+  }
+  if (event.target === sosModal) {
+    closeSOSModal()
+  }
+})
