@@ -561,3 +561,1305 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--background-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    padding: 2rem 0;
+    z-index: 999;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    order: 3; /* Colocar hamburger por último */
+  }
+
+  .theme-switcher {
+    /* display: none; */
+    display: flex; /* Manter visível no mobile */
+    order: 2; /* Colocar antes do hamburger */
+    gap: 0.25rem;
+  }
+
+  .theme-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.875rem;
+  }
+
+  .nav-logo {
+    order: 1;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .slideshow-nav {
+    bottom: 20px;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  /* Novas responsividades */
+  .monitoring-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .maps-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .access-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .level-display {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .level-meter {
+    /* width: 80%;
+    height: 150px; */
+    width: 80px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .level-markers {
+    position: static;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .level-info {
+    align-items: center;
+  }
+
+  .current-level {
+    font-size: 2.2rem;
+  }
+
+  .sos-button {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .sos-button i {
+    font-size: 1.2rem;
+  }
+
+  .sos-button span {
+    font-size: 0.7rem;
+  }
+
+  .sos-options .btn {
+    /* padding: 0.75rem; */
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  /* Melhorar cards de acesso */
+  .access-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .access-card .btn {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  /* Melhorar formulários */
+  .contact-form {
+    padding: 0 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Evitar zoom no iOS */
+  }
+
+  /* Melhorar mapas */
+  .interactive-map {
+    height: 250px;
+  }
+
+  .shelter-list {
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+  .shelter-item {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Footer responsivo */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-text p {
+    font-size: 1rem;
+  }
+
+  .river-level-card,
+  .history-card,
+  .map-container {
+    /* padding: 1.5rem; */
+    padding: 1.5rem 1rem;
+  }
+
+  .access-card {
+    /* padding: 2rem 1.5rem; */
+    padding: 1.5rem 1rem;
+  }
+
+  .access-card i {
+    font-size: 2.5rem;
+  }
+
+  .access-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .modal-content {
+    margin: 5% auto;
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .sos-modal {
+    /* max-width: 90%; */
+    max-width: 95%;
+  }
+
+  .sos-header i {
+    font-size: 3rem;
+  }
+
+  .sos-options .btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* Nível do rio mais compacto */
+  .level-meter {
+    width: 60px;
+    height: 150px;
+  }
+
+  .current-level {
+    font-size: 2rem;
+  }
+
+  .level-status {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .last-update {
+    font-size: 0.75rem;
+  }
+
+  /* Mapas mais compactos */
+  .interactive-map {
+    height: 200px;
+  }
+
+  .map-placeholder {
+    padding: 1rem;
+  }
+
+  .map-placeholder i {
+    font-size: 2rem;
+  }
+
+  .shelter-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* SOS button menor */
+  .sos-button {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .sos-button i {
+    font-size: 1rem;
+  }
+
+  .sos-button span {
+    display: none;
+  }
+
+  /* Gráfico responsivo */
+  .chart-container {
+    height: 150px;
+  }
+
+  /* Quiz responsivo */
+  .quiz-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .quiz-navigation button {
+    width: 100%;
+  }
+
+  /* Formulários mais compactos */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .checkbox-group label {
+    font-size: 0.85rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Scroll animations */
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo-image {
+  height: 40px;
+  transition: var(--transition);
+}
+
+.logo-dark {
+  display: none;
+}
+
+[data-theme="dark"] .logo-image:not(.logo-dark) {
+  display: none;
+}
+
+[data-theme="dark"] .logo-dark {
+  display: block;
+}
+
+/* Monitoramento em Tempo Real */
+.monitoring-section {
+  background: var(--surface-color);
+}
+
+.monitoring-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.river-level-card,
+.history-card {
+  background: var(--background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.river-level-card h3,
+.history-card h3 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+/* Medidor de Nível */
+.level-display {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.level-meter {
+  position: relative;
+  width: 60px;
+  height: 200px;
+  background: #e5e7eb;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.level-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, #10b981, #fbbf24, #f59e0b, #ef4444);
+  transition: height 0.5s ease;
+  border-radius: 0 0 30px 30px;
+}
+
+.level-markers {
+  position: absolute;
+  right: -80px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.marker {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.marker.normal {
+  color: #10b981;
+}
+.marker.attention {
+  color: #fbbf24;
+}
+.marker.alert {
+  color: #f59e0b;
+}
+.marker.emergency {
+  color: #ef4444;
+}
+
+.level-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.current-level {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.level-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status-normal {
+  background: #d1fae5;
+  color: #065f46;
+}
+.status-attention {
+  background: #fef3c7;
+  color: #92400e;
+}
+.status-alert {
+  background: #fed7aa;
+  color: #9a3412;
+}
+.status-emergency {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.last-update {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Gráfico */
+.chart-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+/* Mapas */
+.maps-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.map-container {
+  background: var(--background-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.map-container h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.interactive-map {
+  height: 300px;
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 2rem;
+}
+
+.map-placeholder i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.shelter-list {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.shelter-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.shelter-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.shelter-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.shelter-item strong {
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.shelter-item span {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Legenda de Risco */
+.risk-legend {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.risk-low {
+  background: #10b981;
+}
+.risk-medium {
+  background: #fbbf24;
+}
+.risk-high {
+  background: #ef4444;
+}
+
+/* Botão SOS Flutuante */
+.sos-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  transition: var(--transition);
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+
+.sos-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6);
+}
+
+.sos-button i {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.sos-button span {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.8);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  }
+}
+
+/* Seção de Acesso */
+.access-section {
+  background: var(--background-color);
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.access-card {
+  background: var(--surface-color);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.access-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.access-card i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.access-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.access-card p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.access-card .btn {
+  margin: 0.5rem;
+}
+
+/* Modal SOS */
+.sos-modal {
+  max-width: 500px;
+}
+
+.sos-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sos-header i {
+  font-size: 4rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.sos-header h2 {
+  color: #ef4444;
+  margin-bottom: 0;
+}
+
+.sos-content p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.sos-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sos-options .btn {
+  padding: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-warning {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-warning:hover {
+  background: #d97706;
+}
+
+.btn-info {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-info:hover {
+  background: #2563eb;
+}
+
+.emergency-info {
+  background: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.emergency-info h4 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.emergency-info ul {
+  list-style: none;
+}
+
+.emergency-info li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.emergency-info li:last-child {
+  border-bottom: none;
+}
+
+/* Formulários de Login/Cadastro */
+.checkbox-group {
+  text-align: left;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-top: 0.2rem;
+  width: auto;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+}
+
+.form-footer a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.form-footer a:hover {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  /* .monitoring-grid,
+  .maps-section, */
+  .nav-container {
+    position: relative;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: var(--background-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    padding: 2rem 0;
+    z-index: 999;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    order: 3; /* Colocar hamburger por último */
+  }
+
+  .theme-switcher {
+    display: flex; /* Manter visível no mobile */
+    order: 2; /* Colocar antes do hamburger */
+    gap: 0.25rem;
+  }
+
+  .theme-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.875rem;
+  }
+
+  .nav-logo {
+    order: 1;
+  }
+
+  /* Responsividade das seções principais */
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .slideshow-nav {
+    bottom: 20px;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  /* Monitoramento - Responsividade melhorada */
+  .monitoring-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .maps-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .access-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .level-display {
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .level-meter {
+    width: 80px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .level-markers {
+    /* right: -50px; */
+    position: static;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .level-info {
+    align-items: center;
+  }
+
+  .current-level {
+    font-size: 2.2rem;
+  }
+
+  .sos-button {
+    /* bottom: 20px;
+    right: 20px; */
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .sos-button i {
+    font-size: 1.2rem;
+  }
+
+  .sos-button span {
+    font-size: 0.7rem;
+  }
+
+  .sos-options .btn {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  .access-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .access-card .btn {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+
+  /* Melhorar formulários */
+  .contact-form {
+    padding: 0 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Evitar zoom no iOS */
+  }
+
+  /* Melhorar mapas */
+  /* .interactive-map {
+    height: 250px;
+  } */
+
+  .shelter-list {
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+  .shelter-item {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Footer responsivo */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-text p {
+    font-size: 1rem;
+  }
+
+  /* Cards menores */
+  .river-level-card,
+  .history-card,
+  .map-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .access-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .access-card i {
+    font-size: 2.5rem;
+  }
+
+  .access-card h3 {
+    /* font-size: 1.3rem; */
+    font-size: 1.25rem;
+  }
+  /* }
+
+  @media (max-width: 480px) {
+  .level-markers {
+    display: none;
+  } */
+  /* Modal menor */
+  .modal-content {
+    margin: 5% auto;
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .sos-modal {
+    max-width: 95%;
+  }
+
+  .sos-header i {
+    font-size: 3rem;
+  }
+
+  .sos-options .btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* Nível do rio mais compacto */
+  .level-meter {
+    width: 60px;
+    height: 150px;
+  }
+
+  .current-level {
+    font-size: 2rem;
+  }
+
+  .level-status {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* .map-container {
+    padding: 1rem;
+  } */
+
+  .last-update {
+    font-size: 0.75rem;
+  }
+  
+  /* .interactive-map {
+    height: 200px;
+  } */
+
+  .map-placeholder {
+    padding: 1rem;
+  }
+
+  .map-placeholder i {
+    font-size: 2rem;
+  }
+
+  .shelter-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* .shelter-item i {
+    font-size: 1rem;
+  } */
+
+  .sos-button {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .sos-button i {
+    font-size: 1rem;
+  }
+
+  .sos-button span {
+    display: none;
+  }
+
+  /* .access-card {
+    padding: 1.5rem 1rem;
+  } */
+  /* Gráfico responsivo */
+  .chart-container {
+    height: 150px;
+  }
+
+  /* Quiz responsivo */
+  .quiz-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .quiz-navigation button {
+    width: 100%;
+  }
+
+  /* Formulários mais compactos */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  /* .access-card i {
+    font-size: 2rem;
+  } */
+
+  .checkbox-group label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-container {
+    padding: 0 30px;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  /* .access-card h3 {
+    font-size: 1.1rem;
+  } */
+
+  .monitoring-grid {
+    gap: 1.5rem;
+  }
+
+  .maps-section {
+    gap: 1.5rem;
+  }
+
+  .access-grid {
+    gap: 2rem;
+  }
+
+  .level-display {
+    gap: 1.5rem;
+  }
+
+  .modal-content {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .nav-container {
+    max-width: 1400px;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .monitoring-grid,
+  .maps-section {
+    gap: 3rem;
+  }
+
+  .access-grid {
+    gap: 4rem;
+  }
+}
