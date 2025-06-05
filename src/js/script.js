@@ -883,3 +883,40 @@ function openSOSModal() {
 function closeSOSModal() {
   document.getElementById("sosModal").style.display = "none"
 }
+
+function callDefesaCivil() {
+  // Simular ligação
+  alert(
+    "Conectando com a Defesa Civil...\nTelefone: 199\n\nEm uma situação real, esta função iniciaria uma ligação direta.",
+  )
+
+  // Em um app real, isso abriria o discador
+  // window.location.href = 'tel:199'
+}
+
+function openEmergencyChat() {
+  alert(
+    "Abrindo chat de emergência...\n\nEm uma situação real, isso abriria um chat direto com a equipe de emergência.",
+  )
+
+  // Aqui seria implementado um chat em tempo real
+}
+
+function shareLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude
+        const lng = position.coords.longitude
+        alert(
+          `Localização compartilhada com sucesso!\n\nLatitude: ${lat.toFixed(6)}\nLongitude: ${lng.toFixed(6)}\n\nAs equipes de emergência foram notificadas.`,
+        )
+      },
+      (error) => {
+        alert("Não foi possível obter sua localização. Verifique as permissões do navegador.")
+      },
+    )
+  } else {
+    alert("Geolocalização não é suportada neste navegador.")
+  }
+}
