@@ -415,3 +415,39 @@ function updateNavigationButtons() {
     nextBtn.textContent = "Próxima"
   }
 }
+
+function showResults() {
+  // Calculate score
+  quizScore = 0
+  userAnswers.forEach((answer, index) => {
+    if (answer === quizQuestions[index].correct) {
+      quizScore++
+    }
+  })
+
+  const percentage = Math.round((quizScore / quizQuestions.length) * 100)
+
+  document.getElementById("quizContent").style.display = "none"
+  document.getElementById("quizResult").style.display = "block"
+
+  document.getElementById("scoreText").textContent =
+    `Você acertou ${quizScore} de ${quizQuestions.length} perguntas (${percentage}%)`
+
+  let feedback = ""
+  if (percentage >= 80) {
+    feedback = "Excelente! Você tem um ótimo conhecimento sobre prevenção de enchentes."
+  } else if (percentage >= 60) {
+    feedback = "Bom trabalho! Você tem conhecimentos sólidos, mas pode aprender mais."
+  } else if (percentage >= 40) {
+    feedback = "Razoável. Recomendamos estudar mais sobre o tema."
+  } else {
+    feedback = "É importante aprender mais sobre prevenção de enchentes para sua segurança."
+  }
+
+  document.getElementById("feedbackText").textContent = feedback
+}
+
+function restartQuiz() {
+  resetQuiz()
+  showQuestion()
+}
