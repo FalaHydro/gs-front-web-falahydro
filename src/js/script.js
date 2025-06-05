@@ -326,3 +326,92 @@ function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   return emailRegex.test(email)
 }
+
+// Quiz functionality
+function openQuiz() {
+  document.getElementById("quizModal").style.display = "block"
+  resetQuiz()
+  showQuestion()
+}
+
+function closeQuiz() {
+  document.getElementById("quizModal").style.display = "none"
+}
+
+function resetQuiz() {
+  currentQuestionIndex = 0
+  userAnswers = []
+  quizScore = 0
+  document.getElementById("quizContent").style.display = "block"
+  document.getElementById("quizResult").style.display = "none"
+}
+
+function showQuestion() {
+  const question = quizQuestions[currentQuestionIndex]
+
+  document.getElementById("questionText").textContent = question.question
+  document.getElementById("questionCounter").textContent =
+    `Pergunta ${currentQuestionIndex + 1} de ${quizQuestions.length}`
+
+  const optionsContainer = document.getElementById("optionsContainer")
+  optionsContainer.innerHTML = ""
+
+  question.options.forEach((option, index) => {
+    const optionElement = document.createElement("div")
+    optionElement.className = "option"
+    optionElement.textContent = option
+    optionElement.onclick = () => selectOption(index, optionElement)
+    optionsContainer.appendChild(optionElement)
+  })
+
+  updateNavigationButtons()
+}
+
+function selectOption(index, element) {
+  // Remove previous selection
+  document.querySelectorAll(".option").forEach((opt) => {
+    opt.classList.remove("selected")
+  })
+
+  // Add selection to clicked option
+  element.classList.add("selected")
+  userAnswers[currentQuestionIndex] = index
+
+  // Enable next button
+  document.getElementById("nextBtn").disabled = false
+}
+
+function nextQuestion() {
+  if (userAnswers[currentQuestionIndex] === undefined) {
+    alert("Por favor, selecione uma resposta antes de continuar.")
+    return
+  }
+
+  if (currentQuestionIndex < quizQuestions.length - 1) {
+    currentQuestionIndex++
+    showQuestion()
+  } else {
+    showResults()
+  }
+}
+
+function previousQuestion() {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--
+    showQuestion()
+  }
+}
+
+function updateNavigationButtons() {
+  const prevBtn = document.getElementById("prevBtn")
+  const nextBtn = document.getElementById("nextBtn")
+
+  prevBtn.disabled = currentQuestionIndex === 0
+  nextBtn.disabled = userAnswers[currentQuestionIndex] === undefined
+
+  if (currentQuestionIndex === quizQuestions.length - 1) {
+    nextBtn.textContent = "Finalizar"
+  } else {
+    nextBtn.textContent = "Próxima"
+  }
+}
