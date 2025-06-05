@@ -728,3 +728,158 @@ function setupLoginForms() {
     }
   })
 }
+
+function setupRegisterForm() {
+  const registerForm = document.getElementById("registerForm")
+
+  registerForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    if (validateRegisterForm()) {
+      // Simular cadastro bem-sucedido
+      alert("Cadastro realizado com sucesso! Você pode fazer login agora.")
+      closeRegisterModal()
+      openLoginModal("citizen")
+    }
+  })
+
+  // Máscara para CPF
+  const cpfInput = document.getElementById("registerCPF")
+  cpfInput.addEventListener("input", (e) => {
+    let value = e.target.value.replace(/\D/g, "")
+    value = value.replace(/(\d{3})(\d)/, "$1.$2")
+    value = value.replace(/(\d{3})(\d)/, "$1.$2")
+    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+    e.target.value = value
+  })
+}
+
+function validateLoginForm(cpf, password) {
+  clearLoginErrors()
+  let isValid = true
+
+  if (!cpf) {
+    showLoginError("loginCPFError", "CPF é obrigatório")
+    isValid = false
+  } else if (!validateCPF(cpf)) {
+    showLoginError("loginCPFError", "CPF inválido")
+    isValid = false
+  }
+
+  if (!password) {
+    showLoginError("loginPasswordError", "Senha é obrigatória")
+    isValid = false
+  }
+
+  return isValid
+}
+
+function validateRegisterForm() {
+  clearRegisterErrors()
+  let isValid = true
+
+  const name = document.getElementById("registerName").value
+  const cpf = document.getElementById("registerCPF").value
+  const email = document.getElementById("registerEmail").value
+  const phone = document.getElementById("registerPhone").value
+  const address = document.getElementById("registerAddress").value
+  const password = document.getElementById("registerPassword").value
+  const confirmPassword = document.getElementById("registerConfirmPassword").value
+  const terms = document.getElementById("registerTerms").checked
+
+  if (!name.trim()) {
+    showRegisterError("registerNameError", "Nome é obrigatório")
+    isValid = false
+  }
+
+  if (!cpf) {
+    showRegisterError("registerCPFError", "CPF é obrigatório")
+    isValid = false
+  } else if (!validateCPF(cpf)) {
+    showRegisterError("registerCPFError", "CPF inválido")
+    isValid = false
+  }
+
+  if (!email) {
+    showRegisterError("registerEmailError", "E-mail é obrigatório")
+    isValid = false
+  } else if (!isValidEmail(email)) {
+    showRegisterError("registerEmailError", "E-mail inválido")
+    isValid = false
+  }
+
+  if (!phone) {
+    showRegisterError("registerPhoneError", "Telefone é obrigatório")
+    isValid = false
+  }
+
+  if (!address.trim()) {
+    showRegisterError("registerAddressError", "Endereço é obrigatório")
+    isValid = false
+  }
+
+  if (!password) {
+    showRegisterError("registerPasswordError", "Senha é obrigatória")
+    isValid = false
+  } else if (password.length < 6) {
+    showRegisterError("registerPasswordError", "Senha deve ter pelo menos 6 caracteres")
+    isValid = false
+  }
+
+  if (password !== confirmPassword) {
+    showRegisterError("registerConfirmPasswordError", "Senhas não coincidem")
+    isValid = false
+  }
+
+  if (!terms) {
+    alert("Você deve aceitar os termos de uso e política de privacidade")
+    isValid = false
+  }
+
+  return isValid
+}
+
+function showLoginError(elementId, message) {
+  const errorElement = document.getElementById(elementId)
+  if (errorElement) {
+    errorElement.textContent = message
+  }
+}
+
+function showRegisterError(elementId, message) {
+  const errorElement = document.getElementById(elementId)
+  if (errorElement) {
+    errorElement.textContent = message
+  }
+}
+
+function clearLoginErrors() {
+  document.querySelectorAll("#loginModal .error-message").forEach((error) => {
+    error.textContent = ""
+  })
+}
+
+function clearRegisterErrors() {
+  document.querySelectorAll("#registerModal .error-message").forEach((error) => {
+    error.textContent = ""
+  })
+}
+
+function clearLoginForm() {
+  document.getElementById("loginForm").reset()
+  clearLoginErrors()
+}
+
+function clearRegisterForm() {
+  document.getElementById("registerForm").reset()
+  clearRegisterErrors()
+}
+
+// Funcionalidades SOS
+function openSOSModal() {
+  document.getElementById("sosModal").style.display = "block"
+}
+
+function closeSOSModal() {
+  document.getElementById("sosModal").style.display = "none"
+}
