@@ -57,3 +57,80 @@ const quizQuestions = [
     correct: 2,
   },
 ]
+
+// DOM Content Loaded
+document.addEventListener("DOMContentLoaded", () => {
+  initializeApp()
+})
+
+// Initialize application
+function initializeApp() {
+  setupEventListeners()
+  startSlideshow()
+  setupScrollAnimations()
+  setupFormValidation()
+  loadTheme()
+}
+
+// Event Listeners
+function setupEventListeners() {
+  // Mobile menu toggle
+  const hamburger = document.querySelector(".hamburger")
+  const navMenu = document.querySelector(".nav-menu")
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active")
+    navMenu.classList.toggle("active")
+  })
+
+  // Close mobile menu when clicking on links
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", function () {
+      hamburger.classList.remove("active")
+      navMenu.classList.remove("active")
+      updateActiveNavLink(this.getAttribute("href"))
+    })
+  })
+
+  // Theme switcher
+  document.querySelectorAll(".theme-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const theme = this.getAttribute("data-theme")
+      setTheme(theme)
+    })
+  })
+
+  // Scroll to update active nav link
+  window.addEventListener("scroll", updateActiveNavOnScroll)
+}
+
+// Slideshow functionality
+function startSlideshow() {
+  setInterval(nextSlide, 5000) // Auto advance every 5 seconds
+}
+
+function nextSlide() {
+  const slides = document.querySelectorAll(".slide")
+  const buttons = document.querySelectorAll(".slide-btn")
+
+  slides[currentSlideIndex].classList.remove("active")
+  buttons[currentSlideIndex].classList.remove("active")
+
+  currentSlideIndex = (currentSlideIndex + 1) % slides.length
+
+  slides[currentSlideIndex].classList.add("active")
+  buttons[currentSlideIndex].classList.add("active")
+}
+
+function currentSlide(index) {
+  const slides = document.querySelectorAll(".slide")
+  const buttons = document.querySelectorAll(".slide-btn")
+
+  slides[currentSlideIndex].classList.remove("active")
+  buttons[currentSlideIndex].classList.remove("active")
+
+  currentSlideIndex = index - 1
+
+  slides[currentSlideIndex].classList.add("active")
+  buttons[currentSlideIndex].classList.add("active")
+}
