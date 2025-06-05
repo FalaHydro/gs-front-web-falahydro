@@ -701,3 +701,30 @@ function validateCPF(cpf) {
 
   return remainder === Number.parseInt(cpf.charAt(10))
 }
+
+// Configurar formulários
+function setupLoginForms() {
+  const loginForm = document.getElementById("loginForm")
+
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const cpf = document.getElementById("loginCPF").value
+    const password = document.getElementById("loginPassword").value
+
+    if (validateLoginForm(cpf, password)) {
+      // Simular login bem-sucedido
+      alert(
+        `Login realizado com sucesso! Redirecionando para o dashboard ${currentUserType === "manager" ? "de gestor" : "do cidadão"}...`,
+      )
+      closeLoginModal()
+
+      // Aqui seria o redirecionamento para o dashboard
+      if (currentUserType === "manager") {
+        // window.location.href = 'dashboard-manager.html'
+      } else {
+        // window.location.href = 'dashboard-citizen.html'
+      }
+    }
+  })
+}
