@@ -333,6 +333,33 @@
             </div>
         </section>
     </main>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuiz()">&times;</span>
+            <div id="quizContainer">
+                <h2>Quiz: Prevenção de Enchentes</h2>
+                <div id="quizContent">
+                    <div id="questionContainer">
+                        <h3 id="questionText"></h3>
+                        <div id="optionsContainer"></div>
+                    </div>
+                    <div class="quiz-navigation">
+                        <button id="prevBtn" onclick="previousQuestion()" disabled>Anterior</button>
+                        <span id="questionCounter"></span>
+                        <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
+                    </div>
+                </div>
+                <div id="quizResult" style="display: none;">
+                    <h3>Resultado do Quiz</h3>
+                    <p id="scoreText"></p>
+                    <p id="feedbackText"></p>
+                    <button class="btn btn-primary" onclick="restartQuiz()">Refazer Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
