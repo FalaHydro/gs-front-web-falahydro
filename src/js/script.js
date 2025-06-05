@@ -188,3 +188,30 @@ function updateActiveNavOnScroll() {
     }
   })
 }
+
+// Theme management
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme)
+  localStorage.setItem("theme", theme)
+
+  // Update logo based on theme
+  updateLogo(theme)
+}
+
+function updateLogo(theme) {
+  const logoLight = document.getElementById("logoLight")
+  const logoDark = document.getElementById("logoDark")
+
+  if (theme === "dark") {
+    logoLight.style.display = "none"
+    logoDark.style.display = "block"
+  } else {
+    logoLight.style.display = "block"
+    logoDark.style.display = "none"
+  }
+}
+
+function loadTheme() {
+  const savedTheme = localStorage.getItem("theme") || "light"
+  setTheme(savedTheme)
+}
