@@ -215,3 +215,114 @@ function loadTheme() {
   const savedTheme = localStorage.getItem("theme") || "light"
   setTheme(savedTheme)
 }
+
+// Form validation
+function setupFormValidation() {
+  const form = document.getElementById("contactForm")
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    if (validateForm()) {
+      // Simulate form submission
+      alert("Mensagem enviada com sucesso! Entraremos em contato em breve.")
+      form.reset()
+      clearErrors()
+    }
+  })
+
+  // Real-time validation
+  const inputs = form.querySelectorAll("input, textarea")
+  inputs.forEach((input) => {
+    input.addEventListener("blur", function () {
+      validateField(this)
+    })
+  })
+}
+
+function validateForm() {
+  const name = document.getElementById("name")
+  const email = document.getElementById("email")
+  const phone = document.getElementById("phone")
+  const message = document.getElementById("message")
+
+  let isValid = true
+
+  clearErrors()
+
+  if (!name.value.trim()) {
+    showError("nameError", "Nome é obrigatório")
+    isValid = false
+  }
+
+  if (!email.value.trim()) {
+    showError("emailError", "E-mail é obrigatório")
+    isValid = false
+  } else if (!isValidEmail(email.value)) {
+    showError("emailError", "E-mail inválido")
+    isValid = false
+  }
+
+  if (!phone.value.trim()) {
+    showError("phoneError", "Telefone é obrigatório")
+    isValid = false
+  }
+
+  if (!message.value.trim()) {
+    showError("messageError", "Mensagem é obrigatória")
+    isValid = false
+  }
+
+  return isValid
+}
+
+function validateField(field) {
+  const fieldName = field.name
+  const value = field.value.trim()
+
+  clearError(fieldName + "Error")
+
+  switch (fieldName) {
+    case "name":
+      if (!value) showError("nameError", "Nome é obrigatório")
+      break
+    case "email":
+      if (!value) {
+        showError("emailError", "E-mail é obrigatório")
+      } else if (!isValidEmail(value)) {
+        showError("emailError", "E-mail inválido")
+      }
+      break
+    case "phone":
+      if (!value) showError("phoneError", "Telefone é obrigatório")
+      break
+    case "message":
+      if (!value) showError("messageError", "Mensagem é obrigatória")
+      break
+  }
+}
+
+function showError(elementId, message) {
+  const errorElement = document.getElementById(elementId)
+  if (errorElement) {
+    errorElement.textContent = message
+  }
+}
+
+function clearError(elementId) {
+  const errorElement = document.getElementById(elementId)
+  if (errorElement) {
+    errorElement.textContent = ""
+  }
+}
+
+function clearErrors() {
+  document.querySelectorAll(".error-message").forEach((error) => {
+    error.textContent = ""
+  })
+}
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
