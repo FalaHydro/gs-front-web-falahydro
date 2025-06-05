@@ -459,3 +459,12 @@ window.onclick = (event) => {
     closeQuiz()
   }
 }
+
+// Smooth scrolling for all internal links
+document.addEventListener("click", (e) => {
+  if (e.target.matches('a[href^="#"]')) {
+    e.preventDefault()
+    const targetId = e.target.getAttribute("href").substring(1)
+    scrollToSection(targetId)
+  }
+})
