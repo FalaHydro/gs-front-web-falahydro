@@ -54,6 +54,41 @@
             </div>
         </nav>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">FalaHydro</h1>
+                <p class="hero-subtitle">Prevenção Inteligente de Enchentes</p>
+                <p class="hero-description">
+                    Plataforma integrada que combina sensores, IA e alertas em tempo real para proteger comunidades contra enchentes.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openQuiz()">Teste seus Conhecimentos</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('problema')">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="./src/assets/img/enchentes1.jpg" alt="Monitoramento de rios em tempo real">
+                    </div>
+                    <div class="slide">
+                        <img src="./src/assets/img/enchentes2.jpg" alt="Alertas inteligentes para comunidades">
+                    </div>
+                    <div class="slide">
+                        <img src="./src/assets/img/enchentes3.jpg" alt="Dashboard de análise preditiva">
+                    </div>
+                    <div class="slideshow-nav">
+                        <button class="slide-btn active" onclick="currentSlide(1)"></button>
+                        <button class="slide-btn" onclick="currentSlide(2)"></button>
+                        <button class="slide-btn" onclick="currentSlide(3)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>
