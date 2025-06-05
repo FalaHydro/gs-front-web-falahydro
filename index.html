@@ -89,6 +89,97 @@
             </div>
         </div>
     </section>
+
+    <!-- Monitoramento em Tempo Real -->
+    <section id="monitoramento" class="section monitoring-section">
+        <div class="container">
+            <h2 class="section-title">Monitoramento em Tempo Real</h2>
+            
+            <!-- Nível do Rio -->
+            <div class="monitoring-grid">
+                <div class="river-level-card">
+                    <h3>Nível do Rio Tietê - São Paulo</h3>
+                    <div class="level-display">
+                        <div class="level-meter">
+                            <div class="level-fill" data-level="65"></div>
+                            <div class="level-markers">
+                                <span class="marker normal">Normal</span>
+                                <span class="marker attention">Atenção</span>
+                                <span class="marker alert">Alerta</span>
+                                <span class="marker emergency">Emergência</span>
+                            </div>
+                        </div>
+                        <div class="level-info">
+                            <span class="current-level">3.45m</span>
+                            <span class="level-status status-attention">Atenção</span>
+                            <span class="last-update">Última atualização: há 2 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Histórico dos Últimos 10 Dias -->
+                <div class="history-card">
+                    <h3>Histórico - Últimos 10 Dias</h3>
+                    <div class="chart-container">
+                        <canvas id="levelChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapas Interativos -->
+            <div class="maps-section">
+                <div class="map-container">
+                    <h3>Abrigos e Rotas Seguras</h3>
+                    <div id="sheltersMap" class="interactive-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Mapa interativo com abrigos próximos</p>
+                            <div class="shelter-list">
+                                <div class="shelter-item">
+                                    <i class="fas fa-home"></i>
+                                    <div>
+                                        <strong>Escola Municipal João Silva</strong>
+                                        <span>850m - Capacidade: 200 pessoas</span>
+                                    </div>
+                                </div>
+                                <div class="shelter-item">
+                                    <i class="fas fa-home"></i>
+                                    <div>
+                                        <strong>Centro Comunitário Central</strong>
+                                        <span>1.2km - Capacidade: 150 pessoas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <h3>Região Afetada</h3>
+                    <div id="affectedMap" class="interactive-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Mapa da região com áreas de risco</p>
+                            <div class="risk-legend">
+                                <div class="legend-item">
+                                    <span class="color-box risk-low"></span>
+                                    <span>Risco Baixo</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="color-box risk-medium"></span>
+                                    <span>Risco Médio</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="color-box risk-high"></span>
+                                    <span>Risco Alto</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>
