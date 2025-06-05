@@ -541,3 +541,110 @@ function updateLevelStatus(level) {
     statusSpan.textContent = "Emergência"
   }
 }
+
+// Gráfico de histórico
+function initializeChart() {
+  const canvas = document.getElementById("levelChart")
+  if (!canvas) return
+
+  const ctx = canvas.getContext("2d")
+
+  // Dados simulados dos últimos 10 dias
+  const labels = []
+  const data = []
+
+  for (let i = 9; i >= 0; i--) {
+    const date = new Date()
+    date.setDate(date.getDate() - i)
+    labels.push(date.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }))
+    data.push((Math.random() * 3 + 1).toFixed(2))
+  }
+
+  drawChart(ctx, labels, data)
+}
+
+function drawChart(ctx, labels, data) {
+  const canvas = ctx.canvas
+  const width = canvas.width
+  const height = canvas.height
+
+  // Limpar canvas
+  ctx.clearRect(0, 0, width, height)
+
+  // Configurações
+  const padding = 40
+  const chartWidth = width - 2 * padding
+  const chartHeight = height - 2 * padding
+
+  // Encontrar min/max
+  const maxValue = Math.max(...data.map((d) => Number.parseFloat(d)))
+  const minValue = Math.min(...data.map((d) => Number.parseFloat(d)))
+  const range = maxValue - minValue || 1
+
+  // Desenhar eixos
+  ctx.strokeStyle = "#e5e7eb"
+  ctx.lineWidth = 1
+
+  // Eixo Y
+  ctx.beginPath()
+  ctx.moveTo(padding, padding)
+  ctx.lineTo(padding, height - padding)
+  ctx.stroke()
+
+  // Eixo X
+  ctx.beginPath()
+  ctx.moveTo(padding, height - padding)
+  ctx.lineTo(width - padding, height - padding)
+  ctx.stroke()
+
+  // Desenhar linha do gráfico
+  ctx.strokeStyle = "#3b82f6"
+  ctx.lineWidth = 2
+  ctx.beginPath()
+
+  data.forEach((value, index) => {
+    const x = padding + (index / (data.length - 1)) * chartWidth
+    const y = height - padding - ((Number.parseFloat(value) - minValue) / range) * chartHeight
+
+    if (index === 0) {
+      ctx.moveTo(x, y)
+    } else {
+      ctx.lineTo(x, y)
+    }
+  })
+
+  ctx.stroke()
+
+  // Desenhar pontos
+  ctx.fillStyle = "#3b82f6"
+  data.forEach((value, index) => {
+    const x = padding + (index / (data.length - 1)) * chartWidth
+    const y = height - padding - ((Number.parseFloat(value) - minValue) / range) * chartHeight
+
+    ctx.beginPath()
+    ctx.arc(x, y, 4, 0, 2 * Math.PI)
+    ctx.fill()
+  })
+
+  // Labels do eixo X
+  ctx.fillStyle = "#6b7280"
+  ctx.font = "12px Inter"
+  ctx.textAlign = "center"
+
+  labels.forEach((label, index) => {
+    const x = padding + (index / (labels.length - 1)) * chartWidth
+    ctx.fillText(label, x, height - 10)
+  })
+}
+
+function addToHistory(value) {
+  riverLevelData.push(value)
+  if (riverLevelData.length > 10) {
+    riverLevelData.shift()
+  }
+
+  // Atualizar gráfico se necessário
+  if (chartInstance) {
+    initializeChart()
+  }
+}
