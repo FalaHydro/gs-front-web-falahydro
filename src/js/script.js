@@ -468,3 +468,17 @@ document.addEventListener("click", (e) => {
     scrollToSection(targetId)
   }
 })
+
+// Variáveis globais para as novas funcionalidades
+let currentUserType = null
+const riverLevelData = []
+const chartInstance = null
+
+// Inicializar funcionalidades adicionais
+document.addEventListener("DOMContentLoaded", () => {
+  initializeRiverLevel()
+  initializeChart()
+  setupLoginForms()
+  setupRegisterForm()
+  generateMockData()
+})
