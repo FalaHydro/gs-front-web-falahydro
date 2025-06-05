@@ -451,3 +451,11 @@ function restartQuiz() {
   resetQuiz()
   showQuestion()
 }
+
+// Close modal when clicking outside
+window.onclick = (event) => {
+  const modal = document.getElementById("quizModal")
+  if (event.target === modal) {
+    closeQuiz()
+  }
+}
