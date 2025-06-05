@@ -300,3 +300,46 @@ body {
 .slide-btn:hover {
   background: var(--primary-color);
 }
+
+/* Sections */
+.section {
+  padding: var(--section-padding);
+}
+
+.section-alt {
+  background: var(--surface-color);
+}
+
+.section-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.section-content.reverse {
+  direction: rtl;
+}
+
+.section-content.reverse > * {
+  direction: ltr;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.section-text p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.section-image img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
