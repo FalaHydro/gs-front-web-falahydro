@@ -180,6 +180,34 @@
             </div>
         </div>
     </section>
+
+    <!-- Botão SOS Flutuante -->
+    <div class="sos-button" onclick="openSOSModal()">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>SOS</span>
+    </div>
+
+    <!-- Seção de Acesso -->
+    <section id="acesso" class="section access-section">
+        <div class="container">
+            <h2 class="section-title">Acesso ao Sistema</h2>
+            <div class="access-grid">
+                <div class="access-card">
+                    <i class="fas fa-user"></i>
+                    <h3>Cidadão</h3>
+                    <p>Acesse informações públicas, alertas personalizados e recursos de emergência</p>
+                    <button class="btn btn-primary" onclick="openLoginModal('citizen')">Fazer Login</button>
+                    <button class="btn btn-secondary" onclick="openRegisterModal()">Cadastrar-se</button>
+                </div>
+                <div class="access-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Gestor Público</h3>
+                    <p>Dashboard avançado com controles administrativos e análises detalhadas</p>
+                    <button class="btn btn-primary" onclick="openLoginModal('manager')">Acesso Gestor</button>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>
