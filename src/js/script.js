@@ -495,3 +495,49 @@ function initializeRiverLevel() {
     setInterval(updateRiverLevel, 30000)
   }
 }
+
+function updateRiverLevel() {
+  const levelFill = document.querySelector(".level-fill")
+  const currentLevelSpan = document.querySelector(".current-level")
+  const lastUpdateSpan = document.querySelector(".last-update")
+
+  // Simular variação do nível
+  const variation = (Math.random() - 0.5) * 10
+  let newLevel = Number.parseInt(levelFill.style.height) + variation
+  newLevel = Math.max(0, Math.min(100, newLevel))
+
+  levelFill.style.height = newLevel + "%"
+
+  // Atualizar valor numérico
+  const meterValue = ((newLevel / 100) * 5).toFixed(2) // Simular metros
+  currentLevelSpan.textContent = meterValue + "m"
+
+  // Atualizar status
+  updateLevelStatus(newLevel)
+
+  // Atualizar timestamp
+  lastUpdateSpan.textContent = "Última atualização: agora"
+
+  // Adicionar ao histórico
+  addToHistory(Number.parseFloat(meterValue))
+}
+
+function updateLevelStatus(level) {
+  const statusSpan = document.querySelector(".level-status")
+
+  statusSpan.className = "level-status "
+
+  if (level < 30) {
+    statusSpan.classList.add("status-normal")
+    statusSpan.textContent = "Normal"
+  } else if (level < 60) {
+    statusSpan.classList.add("status-attention")
+    statusSpan.textContent = "Atenção"
+  } else if (level < 80) {
+    statusSpan.classList.add("status-alert")
+    statusSpan.textContent = "Alerta"
+  } else {
+    statusSpan.classList.add("status-emergency")
+    statusSpan.textContent = "Emergência"
+  }
+}
