@@ -154,3 +154,37 @@ function setupScrollAnimations() {
     observer.observe(section)
   })
 }
+
+// Navigation
+function scrollToSection(sectionId) {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" })
+  }
+}
+
+function updateActiveNavLink(href) {
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.classList.remove("active")
+  })
+
+  const activeLink = document.querySelector(`a[href="${href}"]`)
+  if (activeLink) {
+    activeLink.classList.add("active")
+  }
+}
+
+function updateActiveNavOnScroll() {
+  const sections = document.querySelectorAll(".section[id]")
+  const scrollPos = window.scrollY + 100
+
+  sections.forEach((section) => {
+    const top = section.offsetTop
+    const bottom = top + section.offsetHeight
+    const id = section.getAttribute("id")
+
+    if (scrollPos >= top && scrollPos <= bottom) {
+      updateActiveNavLink(`#${id}`)
+    }
+  })
+}
