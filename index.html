@@ -462,6 +462,46 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Modal SOS -->
+    <div id="sosModal" class="modal">
+        <div class="modal-content sos-modal">
+            <span class="close" onclick="closeSOSModal()">&times;</span>
+            <div class="sos-content">
+                <div class="sos-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Emergência - SOS</h2>
+                </div>
+                <p>Você está em uma situação de emergência relacionada a enchentes?</p>
+                
+                <div class="sos-options">
+                    <button class="btn btn-danger" onclick="callDefesaCivil()">
+                        <i class="fas fa-phone"></i>
+                        Ligar para Defesa Civil
+                    </button>
+                    <button class="btn btn-warning" onclick="openEmergencyChat()">
+                        <i class="fas fa-comments"></i>
+                        Chat de Emergência
+                    </button>
+                    <button class="btn btn-info" onclick="shareLocation()">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Compartilhar Localização
+                    </button>
+                </div>
+
+                <div class="emergency-info">
+                    <h4>Números de Emergência:</h4>
+                    <ul>
+                        <li><strong>Defesa Civil:</strong> 199</li>
+                        <li><strong>Bombeiros:</strong> 193</li>
+                        <li><strong>SAMU:</strong> 192</li>
+                        <li><strong>Polícia:</strong> 190</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/js/script.js"></script>
 </body>
 </html>
