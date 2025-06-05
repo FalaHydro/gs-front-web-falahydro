@@ -44,3 +44,16 @@
   --text-secondary: #0369a1;
   --border-color: #bae6fd;
 }
+
+/* Base Styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
