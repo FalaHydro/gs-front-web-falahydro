@@ -134,3 +134,23 @@ function currentSlide(index) {
   slides[currentSlideIndex].classList.add("active")
   buttons[currentSlideIndex].classList.add("active")
 }
+
+// Scroll animations
+function setupScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible")
+      }
+    })
+  }, observerOptions)
+
+  document.querySelectorAll(".section").forEach((section) => {
+    observer.observe(section)
+  })
+}
