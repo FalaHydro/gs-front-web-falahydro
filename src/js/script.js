@@ -920,3 +920,13 @@ function shareLocation() {
     alert("Geolocalização não é suportada neste navegador.")
   }
 }
+
+// Dados simulados
+function generateMockData() {
+  // Simular dados de sensores
+  setInterval(() => {
+    // Atualizar dados em tempo real (simulação)
+    const timestamp = new Date().toLocaleTimeString("pt-BR")
+    console.log(`[${timestamp}] Dados atualizados dos sensores`)
+  }, 60000) // A cada minuto
+}
