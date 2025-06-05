@@ -360,6 +360,108 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FalaHydro</h3>
+                    <p>Prevenção inteligente de enchentes através da tecnologia.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#problema">Problema</a></li>
+                        <li><a href="#tecnologias">Tecnologias</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: contato@falahydro.com.br</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FalaHydro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div id="loginContainer">
+                <h2 id="loginTitle">Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="loginCPF" name="cpf" placeholder="CPF" required>
+                        <span class="error-message" id="loginCPFError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" name="password" placeholder="Senha" required>
+                        <span class="error-message" id="loginPasswordError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <p class="form-footer">
+                        Não tem conta? <a href="#" onclick="openRegisterModal()">Cadastre-se</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegisterModal()">&times;</span>
+            <div id="registerContainer">
+                <h2>Cadastro de Usuário</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" id="registerName" name="name" placeholder="Nome completo" required>
+                        <span class="error-message" id="registerNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="registerCPF" name="cpf" placeholder="CPF" required>
+                        <span class="error-message" id="registerCPFError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="registerEmail" name="email" placeholder="E-mail" required>
+                        <span class="error-message" id="registerEmailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="registerPhone" name="phone" placeholder="Telefone" required>
+                        <span class="error-message" id="registerPhoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="registerAddress" name="address" placeholder="Endereço completo" required>
+                        <span class="error-message" id="registerAddressError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="registerPassword" name="password" placeholder="Senha" required>
+                        <span class="error-message" id="registerPasswordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword" placeholder="Confirmar senha" required>
+                        <span class="error-message" id="registerConfirmPasswordError"></span>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="registerTerms" required>
+                            Aceito os <a href="#" target="_blank">termos de uso</a> e <a href="#" target="_blank">política de privacidade</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <p class="form-footer">
+                        Já tem conta? <a href="#" onclick="openLoginModal('citizen')">Fazer login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
