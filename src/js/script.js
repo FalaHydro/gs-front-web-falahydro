@@ -482,3 +482,16 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRegisterForm()
   generateMockData()
 })
+
+// Simulação do nível do rio
+function initializeRiverLevel() {
+  const levelFill = document.querySelector(".level-fill")
+  const currentLevel = 65 // Porcentagem do nível
+
+  if (levelFill) {
+    levelFill.style.height = currentLevel + "%"
+
+    // Atualizar a cada 30 segundos (simulação)
+    setInterval(updateRiverLevel, 30000)
+  }
+}
