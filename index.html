@@ -4,8 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FalaHydro</title>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="shortcut icon" href="./src/assets/img/icone-fala-hydro.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img id="logoLight" src="./src/assets/img/logo-fala-hydro-mini.png" alt="FalaHydro Logo" class="logo-image">
+                    <img id="logoDark" src="./src/assets/img/logo-fala-hydro-mini2.png" alt="FalaHydro Logo" class="logo-image logo-dark">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="nav-menu">
+                    <li><a href="#monitoramento" class="nav-link">Monitoramento</a></li>
+                    <li><a href="#problema" class="nav-link">Problema</a></li>
+                    <li><a href="#tecnologias" class="nav-link">Tecnologias</a></li>
+                    <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
+                    <li><a href="#publico" class="nav-link">Público</a></li>
+                    <li><a href="#beneficios" class="nav-link">Benefícios</a></li>
+                    <li><a href="#solucao" class="nav-link">Solução</a></li>
+                    <li><a href="#acesso" class="nav-link">Acesso</a></li>
+                </ul>
+
+                <!-- Theme Switcher -->
+                <div class="theme-switcher">
+                    <button class="theme-btn" data-theme="light" title="Tema Claro">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="dark" title="Tema Escuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="blue" title="Tema Azul">
+                        <i class="fas fa-water"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
     
 </body>
 </html>
